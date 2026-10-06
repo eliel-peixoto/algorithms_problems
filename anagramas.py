@@ -37,7 +37,7 @@ if __name__ == "__main__":
     # Dicionário para agrupar as palavras originais pela sua "assinatura"
     classes = {}
 
-    while True:
+    while True: # Entrada: n palavras - Custo: O(n)
         try:
             linha = input().strip()
         except EOFError:
@@ -55,25 +55,27 @@ if __name__ == "__main__":
 
         # Gera a chave ordenada (assinatura do anagrama) usando merge_sort
         # Exemplo: "roma" -> list("roma") -> merge_sort(...) -> ['a', 'm', 'o', 'r'] -> "amor"
-        chave = "".join(merge_sort(list(palavra_original)))
+        chave = "".join(merge_sort(list(palavra_original))) # Custo da ordenação com Merge Sort: O(n lg n)
 
         # Adiciona a palavra original na sua respectiva classe no dicionário
         if chave not in classes:
             classes[chave] = []
-        classes[chave].append(palavra_original)
+        classes[chave].append(palavra_original) # Possível colocação de custo O(1)
 
     # Para cada classe de anagramas, selecionamos a menor palavra (em ordem alfabética)
     representantes = []
-    for chave, lista_palavras in classes.items():
+    for chave, lista_palavras in classes.items(): # Custo deste laço for: O(n) - Maior consumo
         # Ordenamos a lista de palavras originais dessa classe usando o merge_sort
-        palavras_ordenadas = merge_sort(lista_palavras)
+        palavras_ordenadas = merge_sort(lista_palavras) # Custo da ordenação com Merge Sort: O(n lg n)
         # O primeiro elemento é a menor palavra da classe
-        menor_palavra = palavras_ordenadas[0]
-        representantes.append(menor_palavra)
+        menor_palavra = palavras_ordenadas[0] # Custo: O(1)
+        representantes.append(menor_palavra) # Possível colocação de custo O(1)
 
     # Ordena todas as palavras representantes em ordem lexicográfica (alfabética)
-    representantes_ordenados = merge_sort(representantes)
+    representantes_ordenados = merge_sort(representantes) # Custo da ordenação com Merge Sort: O(n lg n)
 
     # Imprime cada palavra representante, uma por linha
-    for rep in representantes_ordenados:
+    for rep in representantes_ordenados: # Custo deste laço for: O(n) - Maior consumo
         print(rep)
+
+# Complexidade assintótica final: O(n) + O(n lg n) + O(n) + O(n lg n) + O(1) + O(n lg n) + O(n) = O(n lg n)

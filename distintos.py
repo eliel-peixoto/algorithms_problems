@@ -50,8 +50,8 @@ def busca_distintos(array):
 
 if __name__ == "__main__":
 
-    vetor = list((map(int, input().split())))
+    vetor = list((map(int, input().split()))) # Custo da leitura da entrada: O(1)
 
-    vetor_ordenado = merge_sort(vetor)
+    vetor_ordenado = merge_sort(vetor) # Custo da ordenação com Merge Sort: O(n lg n)
 
-    print(busca_distintos(vetor_ordenado))
+    print(busca_distintos(vetor_ordenado)) # Custo da busca pelos números distintos: O(n)

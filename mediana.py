@@ -38,8 +38,10 @@ def encontrar_mediana(array):
 
 if __name__ == "__main__":
 
-    vetor = list((map(int, input().split())))
+    vetor = list((map(int, input().split()))) # Custo da leitura da entrada: O(1)
 
-    vetor_ordenado = merge_sort(vetor)
+    vetor_ordenado = merge_sort(vetor) # Custo da ordenação com o Merge Sort: O(n lg n)
     
-    print(encontrar_mediana(vetor_ordenado))
+    print(encontrar_mediana(vetor_ordenado)) # Custo do cálculo do índice e do acesso direto ao elemento no vetor: O(1)
+
+# Complexidade assintótica final: O(1) + O(n lg n) + O(1) = O(n lg n)
