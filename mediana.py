@@ -33,7 +33,7 @@ def merge(esquerda, direita):
     return resultado
 
 def encontrar_mediana(array):
-    return array[(len(array) - 1 // 2)]
+    return array[((len(array) - 1) // 2)]
 
 
 if __name__ == "__main__":
