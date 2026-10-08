@@ -55,3 +55,5 @@ if __name__ == "__main__":
     vetor_ordenado = merge_sort(vetor) # Custo da ordenação com Merge Sort: O(n lg n)
 
     print(busca_distintos(vetor_ordenado)) # Custo da busca pelos números distintos: O(n)
+
+# Complexidade assintótica final: O(1) + O(n lg n) + O(n) = O(n lg n)
