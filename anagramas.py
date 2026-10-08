@@ -89,7 +89,7 @@ if __name__ == "__main__":
 # 1. PIOR CASO (Nenhuma palavra é anagrama de outra -> m = n, p = 1):
 #   - Leitura e geração de chaves: n passadas executando O(k lg k) -> O(n * k lg k)
 #   - Extração de representantes: m passadas com merge_sort de p=1 -> O(m) -> O(n)
-#   - Ordenação final de líderes: merge_sort com m = n elementos -> O(n lg n)
+#   - Ordenação final de representantes: merge sort com m = n elementos -> O(n lg n)
 #   - Impressão na tela: Percorre m = n elementos em tempo linear -> O(n)
 
 # Custo unificado do pior caso: O(n * k lg k + n lg n)
